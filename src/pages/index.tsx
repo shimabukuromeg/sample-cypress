@@ -1,16 +1,26 @@
-import Head from 'next/head'
+import { signIn, signOut, useSession } from 'next-auth/client'
 
 export default function Home() {
-  return (
-    <div>
-      <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+    const [ session, loading ] = useSession()
 
-      <div>
-        <p>Hello, World.</p>
-      </div>
-    </div>
-  )
+    if (loading) {
+        return <div>Loading...</div>
+    }
+
+    return (
+        <div>
+            {session && (
+                <>
+                    Signed in as {session.user.name} <br/>
+                    <button onClick={signOut}>Sign out</button>
+                </>
+            )}
+            {!session && (
+                <>
+                    Not signed in <br/>
+                    <button onClick={signIn}>Sign in</button>
+                </>
+            )}
+        </div>
+    )
 }
