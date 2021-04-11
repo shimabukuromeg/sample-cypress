@@ -11,13 +11,14 @@ export default function Home() {
         <div>
             {session && (
                 <>
-                    Signed in as {session.user.name} <br/>
+                    <div id="signed">Signed in as</div>
+                    <div>{session.user.name}</div>
                     <button onClick={signOut}>Sign out</button>
                 </>
             )}
             {!session && (
                 <>
-                    Not signed in <br/>
+                    <div id="not-signed">Not signed in</div>
                     <button onClick={signIn}>Sign in</button>
                 </>
             )}
