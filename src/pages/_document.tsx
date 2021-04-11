@@ -10,7 +10,7 @@ class MyDocument extends Document {
         return (
             <Html>
                 <Head />
-                <body style={{ margin: 0, backgroundColor: 'black' }}>
+                <body style={{ margin: 0, backgroundColor: '#121212' }}>
                 <Main />
                 <NextScript />
                 </body>
