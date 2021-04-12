@@ -11,5 +11,5 @@ $ yarn run dev
 # 別ターミナルにて cypress 起動
 $ cd e2e
 $ yarn install
-$ yarn run cypress
+$ yarn run cypress // cypressのGUIツールが起動するよ
 ```
