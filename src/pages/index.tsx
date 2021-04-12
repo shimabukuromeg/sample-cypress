@@ -2,6 +2,7 @@ import { signIn, signOut, useSession } from 'next-auth/client'
 import styled from 'styled-components';
 import { Button } from '@material-ui/core';
 import AccountCircleOutlinedIcon from '@material-ui/icons/AccountCircleOutlined';
+import Link from 'next/link';
 
 const Main = styled.main`
   display: flex;
@@ -21,6 +22,15 @@ const UserNameText = styled.div`
   margin-bottom: .25rem;
 `;
 
+const ExtendButton = styled(Button)`
+  width: 115px;
+  height: 45px;
+`;
+
+const ExtendButtonContainer = styled.div`
+    margin-bottom: 10px;
+`;
+
 export default function Home() {
     const [ session, loading ] = useSession()
 
@@ -35,9 +45,18 @@ export default function Home() {
                     <AccountCircleOutlinedIcon fontSize="large" />
                     <AuthText id="signed">Signed in as</AuthText>
                     <UserNameText>{session.user.name}</UserNameText>
-                    <Button onClick={signOut} size="large" variant="outlined" color="primary">
+                    <Link href="/mypage">
+                        <a>
+                            <ExtendButtonContainer>
+                                <ExtendButton size="large" variant="outlined" color="secondary">
+                                    MyPage
+                                </ExtendButton>
+                            </ExtendButtonContainer>
+                        </a>
+                    </Link>
+                    <ExtendButton onClick={signOut} size="large" variant="outlined" color="primary">
                         Sign out
-                    </Button>
+                    </ExtendButton>
                 </>
             )}
             {!session && (
