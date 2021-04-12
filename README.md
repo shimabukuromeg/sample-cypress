@@ -6,10 +6,10 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 # サンプルアプリ起動
 $ cp .env.example .env.local
 $ yarn install
-$ yarn run dev
+$ yarn run dev # http://localhost:3000 でサンプルアプリにアクセスできるよ
 
 # 別ターミナルにて cypress 起動
 $ cd e2e
 $ yarn install
-$ yarn run cypress // cypressのGUIツールが起動するよ
+$ yarn run cypress # cypressのGUIツールが起動するよ
 ```
