@@ -7,7 +7,7 @@ context('Login', () => {
     });
     describe('ログイン', () => {
         describe('正しいメールアドレスとパスワードの組み合わせを入力すると、ログインすることが出来る', () => {
-            it('正しいメールアドレスとパスワードを入力する', () => {
+            it('正しいメールアドレスとパスワードの組み合わせを入力すると、ログインすることが出来る', () => {
                 cy.get('button').click();
                 cy.location('pathname').should('eq', '/api/auth/signin');
                 cy.get('#input-email-for-credentials-provider')
@@ -19,7 +19,7 @@ context('Login', () => {
             });
         });
         describe('間違ったメールアドレスとパスワードの組み合わせを入力すると、ログインすることができない', () => {
-            it('正しいメールアドレスとパスワードを入力する', () => {
+            it('間違ったメールアドレスとパスワードの組み合わせを入力すると、ログインすることができない', () => {
                 cy.get('button').click();
                 cy.location('pathname').should('eq', '/api/auth/signin');
                 cy.get('#input-email-for-credentials-provider')
@@ -33,7 +33,7 @@ context('Login', () => {
     });
     describe('ログアウト', () => {
         describe('ログアウトすることが出来る', () => {
-            it('正しいメールアドレスとパスワードを入力する', () => {
+            it('ログアウトすることが出来る', () => {
                 cy.get('button').click();
                 cy.location('pathname').should('eq', '/api/auth/signin');
                 cy.get('#input-email-for-credentials-provider')
